@@ -1,0 +1,43 @@
+<div class="max-w-xl mx-auto p-4 space-y-6">
+  <h1 class="text-2xl font-bold text-center">Task Tracker</h1>
+
+  <div *ngIf="loading" class="text-sm text-gray-500">Cargando...</div>
+  <div *ngIf="error" class="bg-red-100 text-red-700 p-2 rounded">{{ error }}</div>
+
+  <div class="flex gap-2">
+    <input
+      [(ngModel)]="newTask.title"
+      placeholder="Nueva tarea"
+      class="flex-1 border rounded p-2"
+      maxlength="100" />
+    <button
+      (click)="add()"
+      [disabled]="!newTask.title.trim()"
+      class="bg-green-600 text-white px-4 py-2 rounded disabled:opacity-50">
+      Añadir
+    </button>
+  </div>
+
+  <textarea
+    [(ngModel)]="newTask.description"
+    placeholder="Descripción (opcional)"
+    class="w-full border rounded p-2"
+    maxlength="500"></textarea>
+
+  <ul class="divide-y">
+    <li *ngFor="let task of tasks" class="flex items-center justify-between py-2">
+      <div class="pr-3">
+        <div class="font-medium" [class.line-through]="task.completed">{{ task.title }}</div>
+        <div class="text-sm text-gray-500" *ngIf="task.description">{{ task.description }}</div>
+      </div>
+      <div class="flex gap-2">
+        <button (click)="toggle(task)" class="px-3 py-1 text-sm rounded bg-blue-600 text-white">
+          {{ task.completed ? 'Desmarcar' : 'Completar' }}
+        </button>
+        <button (click)="remove(task)" class="px-3 py-1 text-sm rounded bg-red-600 text-white">
+          Eliminar
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
