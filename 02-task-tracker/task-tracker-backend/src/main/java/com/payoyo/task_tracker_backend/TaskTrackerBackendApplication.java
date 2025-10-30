@@ -1,13 +1,13 @@
-package com.payoyo.task_tracker;
+package com.payoyo.task_tracker_backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TaskTrackerApplication {
+public class TaskTrackerBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TaskTrackerApplication.class, args);
+		SpringApplication.run(TaskTrackerBackendApplication.class, args);
 	}
 
 }
