@@ -47,7 +47,7 @@ public class Task {
     @Enumerated(EnumType.STRING)
     private Priority priority;
 
-    private Boolean completed = false;
+    private boolean completed = false;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
@@ -56,6 +56,5 @@ public class Task {
     // relacion con categoria
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
-    @NotNull(message = "La categoria es obligatoria")
     private Category category;
 }
