@@ -1,7 +1,10 @@
 package com.payoyo.task_tracker_backend.models;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -38,6 +41,10 @@ public class Category {
 
     @Size(min = 1, max = 255, message = "La descripcion debe tener 1-255 caracteres")
     private String description;
+
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private LocalDateTime createdAt;
 
     // relacion con task
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = false)
