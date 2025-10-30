@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TaskTrackerSimpleApplication<task-tracker-simple>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.payoyo.task_tracker_simple.TaskTrackerSimpleApplication",
+            "projectName": "task-tracker-simple",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
