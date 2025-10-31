@@ -26,7 +26,7 @@ public class CategoryMapper {
      * @param entidad
      * @return dto
      */
-    public static CategoryResponse toResponse(Category category) {
+    public static CategoryResponse toDTO(Category category) {
         CategoryResponse dto = new CategoryResponse();
         dto.setId(category.getId());
         dto.setName(category.getName());

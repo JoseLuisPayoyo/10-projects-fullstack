@@ -16,7 +16,7 @@ public class TaskMapper {
      * @param dto
      * @return entidad
      */
-    public static Task toEntity(TaskRequest request, Category category) {
+    public Task toEntity(TaskRequest request, Category category) {
         Task task = new Task();
 
         task.setTitle(request.getTitle());
@@ -33,7 +33,7 @@ public class TaskMapper {
      * @param entity
      * @return dto
      */
-    public static TaskResponse toResponse(Task task) {
+    public static TaskResponse toDTO(Task task) {
         return TaskResponse.builder()
             .id(task.getId())
             .title(task.getTitle())

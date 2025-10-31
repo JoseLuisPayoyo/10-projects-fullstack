@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.payoyo.task_tracker_backend.dto.task.TaskRequest;
 import com.payoyo.task_tracker_backend.dto.task.TaskResponse;
-import com.payoyo.task_tracker_backend.repositories.TaskRepository;
 import com.payoyo.task_tracker_backend.services.ITaskService;
 
 import lombok.RequiredArgsConstructor;
@@ -15,8 +14,6 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class TaskServiceImpl implements ITaskService{
-
-    private final TaskRepository taskRepository;
 
     @Override
     @Transactional
