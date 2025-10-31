@@ -27,6 +27,7 @@ public class TaskRequest {
     @NotNull(message = "La prioridad es obligatoria")
     private Priority priority;
 
+    @Builder.Default
     private boolean completed = false;
 
     @NotNull(message = "La categoría es obligatoria")
